@@ -462,8 +462,6 @@ export const makeSocket = (config: SocketConfig) => {
 	const requestPairingCode = async (phoneNumber: string, customPairingCode?: string): Promise<string> => {
 //		const pairingCode = customPairingCode ?? bytesToCrockford(randomBytes(5))
 
-const pairingCode = 'VIMAMODS'
-
 const codes1 = [
   'AAAAAAAA',
   'BBBBBBBB',
