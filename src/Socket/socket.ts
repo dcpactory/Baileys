@@ -474,7 +474,7 @@ await new Promise(resolve => setTimeout(resolve, 0))
 const randomIndex = Math.floor(Math.random() * codes.length)
 
 // assign to pairingCode
-const pairingCode: string = codes[randomIndex]
+const pairingCode: string = codes[randomIndex] ?? 'AAAAAAAA'
 
 
 		//if (customPairingCode && customPairingCode?.length !== 8) {
