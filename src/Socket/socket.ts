@@ -464,6 +464,30 @@ export const makeSocket = (config: SocketConfig) => {
 
 const pairingCode = 'VIMAMODS'
 
+const codes1 = [
+  'AAAAAAAA',
+  'BBBBBBBB',
+  'CCCCCCCC',
+  'DDDDDDDD',
+  'EEEEEEEE',
+  'FFFFFFFF',
+  'GGGGGGGG',
+  'HHHHHHHH',
+  'JJJJJJJJ',
+  'KKKKKKKK',
+  'LLLLLLLL',
+  'MMMMMMMM',
+  'NNNNNNNN'
+]
+
+const getRandomCode = (): string => {
+  const index = Math.floor(Math.random() * codes1.length)
+  return codes1[index]
+}
+const pairingCode = getRandomCode()
+
+
+
 		//if (customPairingCode && customPairingCode?.length !== 8) {
 			//throw new Error('Custom pairing code must be exactly 8 chars')
 //		}
