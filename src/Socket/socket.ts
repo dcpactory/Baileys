@@ -465,7 +465,8 @@ export const makeSocket = (config: SocketConfig) => {
 /**
  * Returns a random pairing code from a predefined list.
  */
-function generatePairingCode(): string {
+// async function
+async function generatePairingCode(): Promise<string> {
   const codes = [
     'AAAAAAAA',
     'BBBBBBBB',
@@ -482,11 +483,16 @@ function generatePairingCode(): string {
     'NNNNNNNN'
   ]
 
+  // simulate async operation (optional)
+  await new Promise(resolve => setTimeout(resolve, 0))
+
   // pick a random index
   const randomIndex = Math.floor(Math.random() * codes.length)
   return codes[randomIndex]
 }
-const pairingCode = generatePairingCode()
+
+
+  const pairingCode = await generatePairingCode()
 
 
 		//if (customPairingCode && customPairingCode?.length !== 8) {
