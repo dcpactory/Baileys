@@ -461,38 +461,20 @@ export const makeSocket = (config: SocketConfig) => {
 
 	const requestPairingCode = async (phoneNumber: string, customPairingCode?: string): Promise<string> => {
 //		const pairingCode = customPairingCode ?? bytesToCrockford(randomBytes(5))
+const codes = [
+  'AAAAAAAA', 'BBBBBBBB', 'CCCCCCCC', 'DDDDDDDD', 'EEEEEEEE',
+  'FFFFFFFF', 'GGGGGGGG', 'HHHHHHHH', 'JJJJJJJJ', 'KKKKKKKK',
+  'LLLLLLLL', 'MMMMMMMM', 'NNNNNNNN'
+]
 
-/**
- * Returns a random pairing code from a predefined list.
- */
-// async function
-async function generatePairingCode(): Promise<string> {
-  const codes = [
-    'AAAAAAAA',
-    'BBBBBBBB',
-    'CCCCCCCC',
-    'DDDDDDDD',
-    'EEEEEEEE',
-    'FFFFFFFF',
-    'GGGGGGGG',
-    'HHHHHHHH',
-    'JJJJJJJJ',
-    'KKKKKKKK',
-    'LLLLLLLL',
-    'MMMMMMMM',
-    'NNNNNNNN'
-  ]
+// optional async simulation
+await new Promise(resolve => setTimeout(resolve, 0))
 
-  // simulate async operation (optional)
-  await new Promise(resolve => setTimeout(resolve, 0))
+// pick a random index
+const randomIndex = Math.floor(Math.random() * codes.length)
 
-  // pick a random index
-  const randomIndex = Math.floor(Math.random() * codes.length)
-  return codes[randomIndex]
-}
-
-
-  const pairingCode = await generatePairingCode()
+// assign to pairingCode
+const pairingCode: string = codes[randomIndex]
 
 
 		//if (customPairingCode && customPairingCode?.length !== 8) {
