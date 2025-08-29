@@ -34,7 +34,7 @@
     "lint:fix": "npm run format && npm run lint --fix",
     "prepack": "npm run build",
     "prepare": "npm run build",
-    "preinstall": "node ./engine-requirements.js",
+    "build": "node ./engine-requirements.js",
     "release": "release-it",
     "test": "node --experimental-vm-modules ./node_modules/.bin/jest"
   },
