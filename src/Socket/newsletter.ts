@@ -86,14 +86,18 @@ export const makeNewsletterSocket = (sock: GroupsSocket) => {
 			)
 		},
 
-		newsletterMetadata: async (type: 'invite' | 'jid', key: string) => {
+
+        
+
+		newsletterMetadata: async (type: 'invite' | 'jid', key: string, role) => {
 			const variables = {
 				fetch_creation_time: true,
 				fetch_full_image: true,
 				fetch_viewer_metadata: true,
 				input: {
 					key,
-					type: type.toUpperCase()
+					type: type.toUpperCase(),
+         view_role: role || 'GUEST'
 				}
 			}
 			const result = await executeWMexQuery<unknown>(variables, QueryIds.METADATA, XWAPaths.xwa2_newsletter_metadata)
